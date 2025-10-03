@@ -1,32 +1,64 @@
-Book Recommendation Project
+📚 Book Recommendation System
 
-Recommendation Systems are one of the largest application areas of Machine Learning. They enable tailoring personalized content for users, thereby generating revenue for businesses
+Recommendation systems are one of the most widely used applications of Machine Learning. They personalize user experiences by tailoring content, boosting engagement, and driving revenue for businesses.
 
-There are 2 main types of personalized recommendation systems:
+🔹 Types of Recommendation Systems
+1. Content-Based Filtering
 
-Content based filtering
-Recommendations are based on user's past likes/ dislikes & item feature space. The system makes recommendations which are similar to items the user has liked in the past. Items are considered similar based on item's features such as author, publisher, genre etc
+Recommendations are based on a user’s past likes/dislikes and item features (e.g., author, publisher, genre).
 
-Collaborative based filtering
-Recommendations are based solely on user's past likes/ dislikes & how other users have rated other items. The system does not take into consideration an item's features like author, publisher, genre etc nor a user's features like age, gender, location etc. These take either a memory based approach or a model based approach
+Items are considered “similar” if their features match items the user has enjoyed before.
 
-(1)Memory based approach:
-Utilizes entire user-item rating information to calculate similarity scores between items or users for making recommendations. These are further either of 2 types:
+2. Collaborative Filtering
 
-User based: Two users are considered similar, if they rate items in a similar manner. An item is recommended to a user, if another user i.e., similar to the user in question has liked the item
+Recommendations rely only on user-item interactions (ratings), without using item attributes (author, genre) or user attributes (age, gender, location).
 
-Item based: Two items are considered similar, if users rate them in a similar manner. An item is recommended to a user, that is similar to the items the user has rated in the past
+Two main approaches:
 
-(2)Model based approach:
-Utilizes user-item rating information to build a model & the model (not the entire dataset) is thereafter used for making recommendations. This approach is preferred in instances where time & scalability are a concern
+(a) Memory-Based
 
-This project aims to build a recommendation system based on collaborative filtering & will tackle an example of both memory based & model based algorithm
+Uses the full user-item rating matrix to compute similarity.
 
-Datasource:
-This project will use the 'Book-Crossing dataset' collected by Cai-Nicolas Ziegler (http://www2.informatik.uni-freiburg.de/~cziegler/BX/)
+User-based CF: Finds users with similar rating patterns. If User A is similar to User B, items liked by B are recommended to A.
 
-The dataset consists of 3 different tables:
+Item-based CF: Finds items that are rated similarly by users. If a user liked Item X, they are likely to like Item Y (similar to X).
 
-'Users': 278,858 records
-'Books': 271,379 records
-'Ratings' : 1,149,780 records
+(b) Model-Based
+
+Builds a predictive model from user-item interactions (e.g., matrix factorization, clustering, or neural networks).
+
+More scalable and efficient for large datasets.
+
+🔹 Project Objective
+
+This project implements a Collaborative Filtering-based Book Recommendation System using both:
+
+Memory-Based Approach (User- and Item-based Nearest Neighbors)
+
+Model-Based Approach (for scalability and speed)
+
+🔹 Dataset
+
+Book-Crossing Dataset by Cai-Nicolas Ziegler (link
+)
+
+Users: 278,858 records
+
+Books: 271,379 records
+
+Ratings: 1,149,780 records
+
+🔹 Tech Stack
+
+Python (Pandas, NumPy, Scikit-learn)
+
+Streamlit (for interactive UI)
+
+Joblib (for model saving/loading)
+
+🔹 Features
+
+✅ User-based Collaborative Filtering (using cosine similarity & nearest neighbors)
+✅ Item-based Collaborative Filtering
+✅ Model-based filtering for efficiency
+✅ Interactive Streamlit app for real-time recommendations
